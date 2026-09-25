@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Production builds & Archives
+dist/
+*.zip
+*.tar.gz
+*.tgz
+*.rar
+
+# Art, Mockups, Raw Images & Reference Files
+ref/
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+*.ico
+*.psd
+*.ai
+assets/images/
+logo.png
+
+# Internal Chats, Logs, Transcripts & Notes
+*.log
+*.chat
+*.transcript
+scratch/
+
+# Operating System & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.gemini/
+.agents/
+.vercel

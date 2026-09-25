@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 160" width="100%" height="100%">
+  <defs>
+    <!-- Cyan to Blue Neon Gradient -->
+    <linearGradient id="neonCyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f3ff"/>
+      <stop offset="60%" stop-color="#00a8ff"/>
+      <stop offset="100%" stop-color="#0066ff"/>
+    </linearGradient>
+
+    <!-- Magenta Neon Gradient -->
+    <linearGradient id="neonPinkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff007b"/>
+      <stop offset="50%" stop-color="#ff00ea"/>
+      <stop offset="100%" stop-color="#7928ca"/>
+    </linearGradient>
+
+    <!-- Chrome Metallic Accent -->
+    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="35%" stop-color="#b8e4f9"/>
+      <stop offset="60%" stop-color="#3a506b"/>
+      <stop offset="100%" stop-color="#0b132b"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="glowPink" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Cyber Decal Hex/Polygons -->
+  <g opacity="0.4">
+    <!-- Tunnel Rings Perspective -->
+    <polygon points="40,80 85,25 515,25 560,80 515,135 85,135" fill="none" stroke="#00f3ff" stroke-width="1.5" stroke-dasharray="12 6" />
+    <polygon points="60,80 95,40 505,40 540,80 505,120 95,120" fill="none" stroke="#ff007b" stroke-width="1.5" stroke-opacity="0.6"/>
+  </g>
+
+  <!-- High-Speed Chevron Accents (Left & Right) -->
+  <g fill="none" stroke="url(#neonCyanGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.8">
+    <polyline points="20,65 35,80 20,95"/>
+    <polyline points="30,65 45,80 30,95"/>
+    <polyline points="580,65 565,80 580,95"/>
+    <polyline points="570,65 555,80 570,95"/>
+  </g>
+
+  <!-- Speed Lines -->
+  <g stroke="url(#neonPinkGrad)" stroke-width="2" opacity="0.6">
+    <line x1="110" y1="130" x2="230" y2="130" stroke-linecap="round" />
+    <line x1="370" y1="130" x2="490" y2="130" stroke-linecap="round" />
+    <line x1="160" y1="28" x2="440" y2="28" stroke-dasharray="40 15 10 15" stroke-linecap="round" />
+  </g>
+
+  <!-- Central Sci-Fi Emblem (Glider Silhouette) -->
+  <g transform="translate(300, 36) scale(0.65)" filter="url(#glowCyan)">
+    <path d="M 0,-25 L -45,15 L -12,8 L 0,22 L 12,8 L 45,15 Z" fill="url(#neonCyanGrad)"/>
+    <polygon points="0,-16 -6,-2 0,5 6,-2" fill="#ffffff"/>
+  </g>
+
+  <!-- Main Title: VORTEX -->
+  <text x="300" y="88" 
+        font-family="'Orbitron', 'Segoe UI', system-ui, sans-serif" 
+        font-size="62" 
+        font-weight="900" 
+        letter-spacing="14" 
+        text-anchor="middle" 
+        fill="url(#neonCyanGrad)" 
+        stroke="#00f3ff" 
+        stroke-width="1.5"
+        filter="url(#glowCyan)"
+        style="text-transform: uppercase;">
+    VORTEX
+  </text>
+
+  <!-- Subtitle: GLIDE -->
+  <text x="300" y="126" 
+        font-family="'Rajdhani', 'Orbitron', 'Segoe UI', system-ui, sans-serif" 
+        font-size="28" 
+        font-weight="700" 
+        letter-spacing="22" 
+        text-anchor="middle" 
+        fill="url(#neonPinkGrad)" 
+        filter="url(#glowPink)"
+        style="text-transform: uppercase;">
+    GLIDE
+  </text>
+
+  <!-- Corner Tech Accents -->
+  <rect x="80" y="22" width="6" height="6" fill="#00f3ff"/>
+  <rect x="514" y="22" width="6" height="6" fill="#00f3ff"/>
+  <rect x="80" y="132" width="6" height="6" fill="#ff007b"/>
+  <rect x="514" y="132" width="6" height="6" fill="#ff007b"/>
+</svg>

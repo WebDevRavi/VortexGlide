@@ -1,0 +1,19 @@
+{
+  "name": "vortex-glide",
+  "version": "1.0.0",
+  "description": "High-Speed 3D Tunnel Arcade Game for HTML5 Web and CrazyGames",
+  "type": "module",
+  "scripts": {
+    "dev": "node serve.js",
+    "start": "node serve.js",
+    "build": "node build.js",
+    "check": "node -c js/main.js"
+  },
+  "dependencies": {
+    "three": "^0.170.0"
+  },
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "esbuild": "^0.28.2"
+  }
+}

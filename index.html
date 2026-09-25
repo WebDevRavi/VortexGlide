@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Vortex Glide — High-Speed 3D Tunnel Arcade</title>
+  <meta name="description" content="Vortex Glide is a high-speed 3D tunnel arcade runner. Steer your futuristic craft through an endless neon vortex, dodge incoming hazard gates, and break your distance records.">
+  <meta name="theme-color" content="#060710">
+
+  <!-- Favicon / App Icon -->
+  <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+
+  <!-- CrazyGames SDK v3 Official Script -->
+  <script src="https://sdk.crazygames.com/crazygames-sdk-v3.js"></script>
+
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="./css/main.css">
+  <link rel="stylesheet" href="./css/menu.css">
+  <link rel="stylesheet" href="./css/gameplay.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+
+  <!-- Local Three.js Import Map (100% self-contained, no external CDN / CSP issues) -->
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "./js/vendor/three.module.js"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="game-container">
+    <!-- WebGL Render Canvas -->
+    <canvas id="game-canvas"></canvas>
+
+    <!-- UI Overlay Root -->
+    <div id="ui-root">
+      
+      <!-- Gameplay HUD -->
+      <div id="gameplay-hud"></div>
+
+      <!-- 3-2-1 Countdown Overlay -->
+      <div id="countdown-overlay">
+        <div class="countdown-number" id="countdown-number">3</div>
+      </div>
+
+      <!-- FX & Damage Overlay -->
+      <div id="fx-overlay">
+        <div class="impact-flash" id="impact-flash"></div>
+      </div>
+
+      <!-- Home Screen -->
+      <div class="screen active" id="home-screen"></div>
+
+      <!-- How to Play Screen -->
+      <div class="screen backdrop-dim" id="how-to-play-screen"></div>
+
+      <!-- Settings Screen -->
+      <div class="screen backdrop-dim" id="settings-screen"></div>
+
+      <!-- Leaderboard Screen -->
+      <div class="screen backdrop-dim" id="leaderboard-screen"></div>
+
+      <!-- Pause Screen -->
+      <div class="screen backdrop-dim" id="pause-screen"></div>
+
+      <!-- Game Over Screen -->
+      <div class="screen backdrop-dim" id="game-over-screen"></div>
+
+      <!-- Dev FPS Counter -->
+      <div id="fps-counter">FPS: 60</div>
+    </div>
+
+    <!-- Mandatory Mobile Landscape Orientation Lock Screen -->
+    <div id="rotate-device-overlay">
+      <div class="rotate-phone-box">
+        <div class="rotate-phone-animation">
+          <svg viewBox="0 0 100 100" class="rotate-phone-svg" aria-hidden="true">
+            <rect x="30" y="15" width="40" height="70" rx="8" class="phone-body" />
+            <circle cx="50" cy="78" r="3" class="phone-button" />
+            <line x1="42" y1="22" x2="58" y2="22" class="phone-speaker" />
+            <path d="M 20 48 A 32 32 0 0 1 76 22" class="rotate-arrow" />
+            <polygon points="76,17 84,23 76,29" class="rotate-arrow-head" />
+          </svg>
+        </div>
+        <h2 class="rotate-title">ROTATE YOUR DEVICE</h2>
+        <p class="rotate-subtitle">Vortex Glide is optimized for high-speed landscape navigation.</p>
+        <div class="rotate-badge">LANDSCAPE ONLY</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Entry Script -->
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

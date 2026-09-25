@@ -1,0 +1,403 @@
+/* ==========================================================================
+   VORTEX GLIDE — RESPONSIVE, MOBILE & LANDSCAPE ENFORCEMENT
+   Compliant with CrazyGames Mobile & Device Guidelines
+   ========================================================================== */
+
+/* 1. Safe Area Insets for Modern Edge-to-Edge Displays & CrazyGames App */
+#game-container {
+  padding-left: env(safe-area-inset-left, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* 2. Mandatory Mobile Orientation Lock Screen (Hidden on Desktop & Landscape) */
+#rotate-device-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 999999;
+  background: radial-gradient(circle at center, #09122c 0%, #03050c 100%);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.rotate-phone-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 380px;
+}
+
+.rotate-phone-animation {
+  width: 110px;
+  height: 110px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rotate-phone-svg {
+  width: 100%;
+  height: 100%;
+  animation: phoneRotateLoop 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.phone-body {
+  fill: #060b1e;
+  stroke: var(--neon-cyan);
+  stroke-width: 3;
+  filter: drop-shadow(0 0 10px rgba(0, 243, 255, 0.6));
+}
+
+.phone-button {
+  fill: var(--neon-cyan);
+}
+
+.phone-speaker {
+  stroke: rgba(0, 243, 255, 0.7);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.rotate-arrow {
+  fill: none;
+  stroke: var(--neon-cyan);
+  stroke-width: 2.5;
+  stroke-dasharray: 4, 3;
+}
+
+.rotate-arrow-head {
+  fill: var(--neon-cyan);
+}
+
+@keyframes phoneRotateLoop {
+  0%, 15% {
+    transform: rotate(0deg);
+  }
+  50%, 75% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.rotate-title {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  letter-spacing: 3px;
+  color: var(--neon-cyan);
+  text-shadow: var(--neon-cyan-glow);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.rotate-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.rotate-badge {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #030814;
+  background: var(--neon-cyan);
+  padding: 6px 18px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
+}
+
+/* Enforce Landscape Overlay on all Mobile & Tablet screens in Portrait */
+@media screen and (orientation: portrait) and (max-width: 1024px),
+       screen and (max-aspect-ratio: 1/1) and (max-width: 900px) {
+  #rotate-device-overlay {
+    display: flex !important;
+  }
+}
+
+/* Tablets and small screens (<= 768px) */
+@media (max-width: 768px) {
+  .hud-top-container {
+    top: 14px;
+    left: 16px;
+    right: 16px;
+  }
+
+  .hud-panel-card {
+    padding: 6px 14px;
+  }
+
+  .hud-label {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hud-val {
+    font-size: 1.35rem;
+  }
+
+  .hud-pause-square-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .hud-progress-wrapper {
+    width: 140px;
+    margin-top: 12px;
+  }
+
+  #touch-controls {
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+  }
+
+  .btn-touch-arrow {
+    width: 64px;
+    height: 64px;
+  }
+
+  .btn-touch-arrow svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .scifi-card {
+    padding: clamp(12px, 2vh, 22px) clamp(12px, 2.5vw, 24px);
+    width: 95%;
+  }
+
+  .scifi-title {
+    font-size: clamp(1.3rem, 3.2vh, 1.8rem);
+  }
+
+  .btn-pill-primary {
+    font-size: clamp(0.9rem, 1.8vh, 1.15rem);
+    padding: clamp(7px, 1.3vh, 12px) clamp(20px, 3.5vw, 36px);
+  }
+
+  .home-bottom-bar {
+    gap: 8px;
+  }
+
+  .btn-bottom-nav {
+    font-size: clamp(0.66rem, 1.1vh, 0.76rem);
+    padding: 7px 8px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 520px) {
+  .how-to-play-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .htp-tactics-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* CrazyGames Embedded Iframe / Medium Height Screens (<= 680px) */
+@media (max-height: 680px) {
+  #home-screen {
+    padding: clamp(6px, 1.4vh, 12px) clamp(10px, 1.5vw, 18px);
+  }
+
+  .home-center-content {
+    gap: clamp(4px, 1.2vh, 10px);
+  }
+
+  .hero-logo-img {
+    max-height: clamp(65px, 22vh, 160px);
+    max-width: clamp(140px, 28vw, 320px);
+  }
+
+  .home-author-credit {
+    font-size: 0.65rem;
+    padding: 2px 10px;
+  }
+
+  .btn-pill-primary {
+    font-size: 1.02rem;
+    padding: 8px 34px;
+  }
+
+  .home-bottom-bar {
+    max-width: 520px;
+    gap: 8px;
+  }
+
+  .btn-bottom-nav {
+    padding: 6px 10px;
+    font-size: 0.74rem;
+  }
+}
+
+/* Compact Screens / Mobile Landscape (height <= 480px) */
+@media (max-height: 480px) {
+  #home-screen {
+    padding: 4px 10px 6px 10px;
+  }
+
+  .home-top-bar {
+    padding: 0;
+  }
+
+  .home-user-badge,
+  .home-best-pill {
+    padding: 2px 8px;
+  }
+
+  .user-name-text,
+  .best-pill-label,
+  .best-pill-val {
+    font-size: 0.7rem;
+  }
+
+  .home-center-content {
+    gap: 4px;
+  }
+
+  .hero-logo-img {
+    max-height: clamp(50px, 19vh, 100px);
+    max-width: clamp(110px, 22vw, 200px);
+  }
+
+  .home-level-selector {
+    padding: 2px 8px;
+    gap: 4px;
+  }
+
+  .level-select-btn {
+    font-size: 0.95rem;
+    padding: 0 4px;
+  }
+
+  .level-select-tag {
+    font-size: 0.5rem;
+  }
+
+  .level-select-name {
+    font-size: 0.66rem;
+  }
+
+  .home-author-credit {
+    font-size: 0.56rem;
+    padding: 1px 8px;
+  }
+
+  .btn-pill-primary {
+    font-size: 0.85rem;
+    padding: 5px 22px;
+  }
+
+  .home-bottom-bar {
+    max-width: 420px;
+    gap: 5px;
+  }
+
+  .btn-bottom-nav {
+    padding: 4px 6px;
+    font-size: 0.65rem;
+  }
+
+  .scifi-card {
+    padding: clamp(8px, 1.8vh, 14px) clamp(10px, 2vw, 18px);
+    max-height: calc(100vh - 12px);
+    overflow-y: auto;
+  }
+
+  .scifi-title {
+    font-size: clamp(1.15rem, 3.2vh, 1.45rem);
+    margin-bottom: 2px;
+  }
+
+  .scifi-subtitle {
+    font-size: clamp(0.68rem, 1.2vh, 0.78rem);
+    margin-bottom: 6px;
+  }
+
+  .how-to-play-grid {
+    margin: 4px 0 8px 0;
+    gap: 6px;
+  }
+
+  .htp-card {
+    padding: 4px 4px;
+    gap: 3px;
+  }
+
+  .htp-card-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .htp-card-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .htp-card-title {
+    font-size: 0.72rem;
+  }
+
+  .htp-card-desc {
+    font-size: 0.62rem;
+  }
+
+  .htp-tactics-grid {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+
+  .htp-tactic-box {
+    padding: 5px 8px;
+  }
+
+  .tactic-title {
+    font-size: 0.72rem;
+  }
+
+  .tactic-desc {
+    font-size: 0.62rem;
+  }
+
+  .gameover-distance {
+    margin: 2px 0 8px 0;
+    font-size: 2.2rem;
+  }
+
+  .circle-icon-wrapper {
+    width: 46px;
+    height: 46px;
+  }
+
+  .circle-icon-wrapper svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .desktop-controls-hint {
+    display: none !important;
+  }
+}
