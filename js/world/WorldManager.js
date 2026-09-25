@@ -83,9 +83,10 @@ export class WorldManager {
 
   setWorldRoll(worldRoll, bankRatio = 0) {
     // 1. Roll the entire tunnel and obstacle world around the Z axis
-    this.worldGroup.rotation.z = worldRoll;
+    // Steering right (positive roll) rotates world clockwise (-z) so right faces slide under craft
+    this.worldGroup.rotation.z = -worldRoll;
 
-    // 2. Kinetic camera Dutch angle tilt (-1.8 degrees for authentic flight feel)
+    // 2. Kinetic camera Dutch angle tilt
     this.targetCameraTilt = -bankRatio * 0.16;
   }
 

@@ -144,8 +144,8 @@ export class CollectibleManager {
       const isSweptCross = (c.prevZ <= (craftZ + 0.95) && c.z >= (craftZ - 0.95));
 
       if (isInstantOverlap || isSweptCross) {
-        // Player is at bottom (relative angle on tunnel is -worldRoll)
-        let relAngle = -worldRoll;
+        // Player is at bottom (relative angle on tunnel is worldRoll)
+        let relAngle = worldRoll;
         relAngle = ((relAngle % (Math.PI * 2)) + (Math.PI * 2)) % (Math.PI * 2);
 
         let diff = Math.abs(relAngle - c.faceAngle);

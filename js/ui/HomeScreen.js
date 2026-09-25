@@ -180,6 +180,8 @@ export class HomeScreen {
 
     // Wire callbacks
     this.playBtn.addEventListener('click', () => {
+      this.playBtn.blur();
+      window.focus();
       // Try orientation lock to landscape on mobile user gesture
       if (window.screen && window.screen.orientation && window.screen.orientation.lock) {
         window.screen.orientation.lock('landscape').catch(() => {});

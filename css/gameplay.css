@@ -214,6 +214,14 @@
   right: 0;
 }
 
+/* Hide and disable fullscreen touch overlay on desktop with fine mouse pointers */
+@media (hover: hover) and (pointer: fine) {
+  .fullscreen-touch-zone {
+    display: none !important;
+    pointer-events: none !important;
+  }
+}
+
 /* NEAR MISS RADIAL EDGE VIGNETTE */
 .near-miss-vignette {
   position: absolute;

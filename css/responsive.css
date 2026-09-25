@@ -125,9 +125,8 @@
   box-shadow: 0 0 20px rgba(0, 243, 255, 0.8);
 }
 
-/* Enforce Landscape Overlay on all Mobile & Tablet screens in Portrait */
-@media screen and (orientation: portrait) and (max-width: 1024px),
-       screen and (max-aspect-ratio: 1/1) and (max-width: 900px) {
+/* Enforce Landscape Overlay strictly on actual touch mobile/tablet devices in portrait */
+@media screen and (hover: none) and (pointer: coarse) and (orientation: portrait) and (max-width: 1024px) {
   #rotate-device-overlay {
     display: flex !important;
   }

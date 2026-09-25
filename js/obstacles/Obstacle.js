@@ -101,7 +101,7 @@ export class Obstacle {
 
     // Player craft is fixed at bottom (angle 0).
     // The relative angle on the obstacle ring at the bottom is:
-    let relAngle = -worldRoll - this.currentRotation;
+    let relAngle = worldRoll - this.currentRotation;
 
     // Normalize relAngle to [0, 2*PI)
     relAngle = ((relAngle % (Math.PI * 2)) + (Math.PI * 2)) % (Math.PI * 2);
